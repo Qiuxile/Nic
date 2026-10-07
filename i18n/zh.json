@@ -1,0 +1,6 @@
+{
+    "warning": "警告",
+    "error": "错误",
+    
+    "command_empty": "命令不能为空！"
+}

@@ -1,0 +1,6 @@
+{
+    "warning": "Warning",
+    "error": "Error",
+
+    "command_empty": "Command cannot be empty!"
+}
