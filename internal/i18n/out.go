@@ -4,6 +4,8 @@ import (
 	"fmt"
 )
 
-func Out(typeKey string, key string) {
-	fmt.Println(Get(typeKey) + ": " + Get(key))
+func Out(keys ...string) {
+	for _, key := range keys {
+		fmt.Print(Get(key))
+	}
 }

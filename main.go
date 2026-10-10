@@ -4,16 +4,25 @@ import (
 	"os"
 
 	"Nic/internal/args"
-	"Nic/internal/data"
 	"Nic/internal/i18n"
 )
 
+const (
+	version string = "0.0.1"
+	Author string = "Surile"
+)
+
+
 func main() {
-	data.Init()
-	
 	if len(os.Args) < 2 {
-		i18n.Out("error", "command_empty")
+		// 空处理
+		i18n.Out("error", ": ", "command_empty")
 		os.Exit(1)
 	}
-	args.ParseArgs(os.Args)
+
+	err := args.ParseArgs(os.Args)
+	if err != nil {
+		i18n.Out("error", err.Error())
+		os.Exit(1)
+	}
 }
