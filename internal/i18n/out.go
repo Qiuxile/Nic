@@ -4,8 +4,15 @@ import (
 	"fmt"
 )
 
-func Out(keys ...string) {
+func Out(keys ...string) error {
 	for _, key := range keys {
-		fmt.Print(Get(key))
+		if _, err := fmt.Print(Get(key)); err != nil {
+			Out("error", ": ", err.Error())
+		}
 	}
+	return nil
+}
+
+func Endl() {
+	fmt.Print("\n\n")
 }
