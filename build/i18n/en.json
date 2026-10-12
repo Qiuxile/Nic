@@ -2,5 +2,7 @@
     "warning": "Warning",
     "error": "Error",
 
+    "dont have": "Don`t have",
+    "command": "command",
     "command_empty": "Command cannot be empty!"
 }
