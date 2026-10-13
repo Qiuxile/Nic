@@ -2,8 +2,8 @@ package main
 
 import (
 	"os"
-
-	"Nic/internal/args"
+	
+	"Nic/internal/cmd"
 	"Nic/internal/i18n"
 )
 
@@ -21,7 +21,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	if err := args.ParseArgs(os.Args); err != nil {
+	if err := cmd.Execute(); err != nil {
 		// 解析参数
 		i18n.Out("error", err.Error())
 		i18n.Endl()

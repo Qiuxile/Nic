@@ -1,8 +1,8 @@
 {
     "warning": "Warning",
     "error": "Error",
-
-    "dont have": "Don`t have",
+    "version": "Version",
     "command": "command",
+    
     "command_empty": "Command cannot be empty!"
 }

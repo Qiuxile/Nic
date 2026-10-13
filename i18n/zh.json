@@ -1,8 +1,8 @@
 {
     "warning": "警告",
     "error": "错误",
-    
-    "dont have": "没有",
+    "version": "版本",
     "command": "命令",
+    
     "command_empty": "命令不能为空！"
 }
