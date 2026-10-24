@@ -334,75 +334,62 @@ goal
 
 ```text
 .nic/
+├── goals
+├──── 1.json
+├──── <id>.json ...
+├── plans
+├──── 1.json
+├──── <id>.json ...
 ├── config.json          # 仓库配置：版本、项目名、创建时间
-├── graph.json           # 核心：节点 + 边
-├── decisions.jsonl      # 决策日志，追加写
-└── commits.jsonl        # commit 与节点的关联，追加写
 ```
 
 **`config.json`**
 
 ```json
 {
-  "version": 1,
   "project": "Nic",
   "created": "2026-10-07T10:00:00Z"
 }
 ```
 
-**`graph.json`**
+**`<goal.id>.json`**
 
 ```json
 {
-  "version": 1,
-  "nodes": [
-    {
-      "id": "v0.1",
-      "type": "goal",
-      "title": "v0.1 CLI 核心",
-      "status": "doing",
-      "created": "2026-10-07T10:00:00Z"
-    },
-    {
-      "id": "init",
-      "type": "stage",
-      "title": "实现 init",
-      "status": "done",
-      "goal": "v0.1",
-      "created": "2026-10-07T10:01:00Z",
-      "done": "2026-10-07T11:00:00Z"
-    },
-    {
-      "id": "goal",
-      "type": "stage",
-      "title": "实现 goal add/list",
-      "status": "doing",
-      "goal": "v0.1",
-      "created": "2026-10-07T10:02:00Z",
-      "done": null
-    }
-  ],
-  "edges": [
-    { "type": "contains", "from": "v0.1", "to": "init" },
-    { "type": "contains", "from": "v0.1", "to": "goal" },
-    { "type": "depends", "from": "goal", "to": "init" }
+  "id": "<id>",
+  "title": "实现 goal add/list",
+  "descripts": "...",
+  "stages": [
+      {
+          "id": "<id>",
+          "title": "第一个 stage",
+          "descripts": "...",
+          "stages": []
+          "status": "doing",
+          "created": "2026-10-07T10:02:00Z"
+      },
+      ...
   ]
+  "status": "doing",
+  "created": "2026-10-07T10:02:00Z",
 }
 ```
 
-**`decisions.jsonl`**
+**`<plan.id>.jsonl`**
 
-```jsonl
-{"time":"2026-10-07T10:10:00Z","stage":"init","text":"决定用 cobra 而不是标准库 flag","reason":"需要子命令"}
+```json
+{
+  "id": "<id>",
+  "title": "实现 plan link/list",
+  "descripts": "...",
+  "goals": [
+    "<goal.id>",
+    "..."
+  ],
+  "status": "doing",
+  "created": "2026-10-07T10:02:00Z",
+}
 ```
-
-**`commits.jsonl`**
-
-```jsonl
-{"commit":"a1b2c3d","stage":"init","time":"2026-10-07T11:00:00Z"}
-```
-
----
 
 ## 阶段状态
 

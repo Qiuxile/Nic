@@ -4,5 +4,9 @@
     "version": "版本",
     "command": "命令",
     
-    "command_empty": "命令不能为空！"
+    "command_empty": "命令不能为空！",
+    "content_empty": "内容不能为空！",
+
+    "init_ok": "初始化成功",
+    "goal_ok": "目标推荐成功"
 }

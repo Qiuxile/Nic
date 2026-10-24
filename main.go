@@ -7,11 +7,6 @@ import (
 	"Nic/internal/i18n"
 )
 
-const (
-	version string = "0.0.1"
-	Author string = "Surile"
-)
-
 
 func main() {
 	if len(os.Args) < 2 {

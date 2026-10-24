@@ -4,5 +4,9 @@
     "version": "Version",
     "command": "command",
     
-    "command_empty": "Command cannot be empty!"
+    "command_empty": "Command cannot be empty!",
+    "content_empty": "Content cannot be empty!",
+
+    "init_ok": "Init success",
+    "goal_ok": "Goal add success"
 }
